@@ -11,7 +11,7 @@
     "react": "latest",
     "react-dom": "latest",
     "zustand": "latest",
-    "user-info-widget": "file:../user-info-widget"
+    "testing_react_plugin": "file:../testing_react_plugin-master"
   },
   "devDependencies": {
     "typescript": "^4.9.5",
