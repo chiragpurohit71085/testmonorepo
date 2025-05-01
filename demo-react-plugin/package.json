@@ -1,5 +1,5 @@
 {
-  "name": "testing_react_plugin",
+  "name": "demo-react-plugin",
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -36,7 +36,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
-    "sass": "^1.83.0",
+    "sass": "^1.87.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
