@@ -1,5 +1,5 @@
 export interface SampleComponentProps {
-    text: string;
-    onTextChange: (text: string) => void;
-    onCallback: () => void;
+    text?: string;
+    onTextChange?: (text: string) => void;
+    onCallback?: () => void;
   }
