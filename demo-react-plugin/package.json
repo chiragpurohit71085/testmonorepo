@@ -23,7 +23,8 @@
     "react": "latest",
     "react-dom": "latest",
     "next": "latest",
-    "react-native": ">=0.79.0"
+    "react-native": ">=0.79.0",
+    "react-native-web": "^0.20.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
@@ -44,8 +45,6 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
-  },
-  "dependencies": {
-    "react-native-web": "^0.20.0"
   }
+ 
 }
