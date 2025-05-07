@@ -11,7 +11,7 @@
     "react": "latest",
     "react-dom": "latest",
     "zustand": "latest",
-    "testing_react_plugin": "file:../demo-react-plugin"
+    "demo-react-plugin": "file:../demo-react-plugin"
   },
   "devDependencies": {
     "typescript": "^4.9.5",
