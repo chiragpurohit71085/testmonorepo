@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // if you’re on Next.js ≥13.1 you can use built-in transpilePackages:
-  transpilePackages: ['user-info-widget'],
+  transpilePackages: ['@chiragpurohit71085/demo-react-plugin'], 
   // if you’re on an older version, use next-transpile-modules:
   // ...require('next-transpile-modules')(['user-info-widget'])(),
 
