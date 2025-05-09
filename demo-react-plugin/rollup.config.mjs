@@ -25,7 +25,8 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss(),
-    ignore(["**/*.flow","react-native","react","react-dom","react-native-web"]),
+    // ignore(["**/*.flow","react-native","react","react-dom","react-native-web"]),
+    ignore(["**/*.flow","react"]),
   ],
-  external: ["react", "react-dom", "react-native","react-native-web"], // Exclude react-native
+  external: ["react"], 
 };

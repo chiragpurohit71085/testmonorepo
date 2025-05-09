@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { SampleComponent } from "@chiragpurohit71085/demo-react-plugin";
-// import { useAppStore } from "../store/store";
+import { useAppStore } from "../store/store";
 
 const Home: React.FC = () => {
-  // const { text, setText, setCallback } = useAppStore();
+  const { text, setText, setCallback } = useAppStore();
 
-  // useEffect(() => {
-  //   setCallback(() => () => {
-  //     alert("Callback triggered from SampleComponent!");
-  //   });
-  // }, [setCallback]);
+  useEffect(() => {
+    setCallback(() => () => {
+      alert("Callback triggered from SampleComponent!");
+    });
+  }, [setCallback]);
 
   return (
     <div style={{ padding: "2rem" }}>
