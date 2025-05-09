@@ -1,11 +1,11 @@
 import React, { JSX } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Pressable, StyleSheet } from "react-native";
 import { SampleComponentProps } from "./SampleComponent.types";
 
 const SampleComponent = ({
-  text,
-  onTextChange,
-  onCallback,
+  text = "Initial Text",
+  onTextChange = () => {},
+  onCallback = () => {},
 }: SampleComponentProps): JSX.Element => {
   const handleButtonClick = () => {
     onTextChange("Updated from SampleComponent");
@@ -16,7 +16,9 @@ const SampleComponent = ({
     <View style={styles.container}>
       <Text style={styles.heading}>This is a Sample component</Text>
       <Text style={styles.text}>{text}</Text>
-      <Button title="Update Text" onPress={handleButtonClick} />
+      <Pressable onPress={handleButtonClick} style={styles.button}>
+        <Text style={styles.buttonText}>Update Text</Text>
+      </Pressable>
     </View>
   );
 };
@@ -32,11 +34,21 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 8,
   },
   text: {
     fontSize: 14,
     fontWeight: "600",
     marginVertical: 8,
+  },
+  button: {
+    backgroundColor: '#007AFF',
+    padding: 10,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
   },
 });
 

@@ -1,29 +1,32 @@
-// next.config.js
+const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // if you’re on Next.js ≥13.1 you can use built-in transpilePackages:
-  // transpilePackages: ['@chiragpurohit71085/demo-react-plugin'], 
-  // if you’re on an older version, use next-transpile-modules:
-  // ...require('next-transpile-modules')(['user-info-widget'])(),
-
-  webpack(config) {
-    // 3. Alias all “react-native” imports to react-native-web
+  transpilePackages: ['@chiragpurohit71085/demo-react-plugin'],
+  webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       'react-native$': 'react-native-web',
-    };
+    }
+    
+    config.resolve.extensions = [
+      '.web.js',
+      '.web.jsx',
+      '.web.tsx',
+      ...config.resolve.extensions
+    ]
 
-    // 4. Let Next.js resolve .web.js/.native.js correctly
-    // config.resolve.extensions = [
-    //   '.web.js',
-    //   '.web.tsx',
-    //   '.native.js',
-    //   '.native.tsx',
-    //   ...config.resolve.extensions,
-    // ];
+    // Prevent multiple React instances
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'react': path.resolve('./node_modules/react'),
+        'react-dom': path.resolve('./node_modules/react-dom'),
+        'react-native-web': path.resolve('./node_modules/react-native-web'),
+      }
+    }
 
-    return config;
+    return config
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

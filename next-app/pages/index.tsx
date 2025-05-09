@@ -3,7 +3,7 @@ import { SampleComponent } from "@chiragpurohit71085/demo-react-plugin";
 import { useAppStore } from "../store/store";
 
 const Home: React.FC = () => {
-  const { text, setText, setCallback } = useAppStore();
+  const { text, setText, callback, setCallback } = useAppStore();
 
   useEffect(() => {
     setCallback(() => () => {
@@ -14,15 +14,11 @@ const Home: React.FC = () => {
   return (
     <div style={{ padding: "2rem" }}>
       <h1>Next.js App with Zustand and SampleComponent</h1>
-      <p>Shared State: </p>
+      <p>Shared State: {text}</p>
       <SampleComponent
-        text={"tesxt"}
-        onTextChange={(text) => {
-          // setText(text);
-          console.log("Text updated:", text);
-        }
-        }
-        onCallback={() => alert("Callback executed in Next.js App!")}
+        text={text}
+        onTextChange={setText}
+        onCallback={callback}
       />
     </div>
   );

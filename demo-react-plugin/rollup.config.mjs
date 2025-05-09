@@ -21,12 +21,24 @@ export default {
   ],
   plugins: [
     peerDepsExternal(), // Automatically exclude peer dependencies
-    resolve(),
-    commonjs(),
+    resolve({
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      preferBuiltins: true
+    }),
+    commonjs({
+      include: /node_modules/
+    }),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss(),
-    // ignore(["**/*.flow","react-native","react","react-dom","react-native-web"]),
-    ignore(["**/*.flow","react"]),
+    ignore(["**/*.flow"]),
+    // ignore(["**/*.flow"]),
   ],
-  external: ["react"], 
+  external: [
+    'react', 
+    'react-dom', 
+    'react-native', 
+    'react-native-web',
+    '@react-native/normalize-color',
+    'react/jsx-runtime'
+  ] // Exclude react-native and react-native-web
 };
