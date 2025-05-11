@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chiragpurohit71085/demo-react-plugin": "file:../demo-react-plugin",    
+    "@chiragpurohit71085/demo-react-plugin": "file:../demo-react-plugin",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
