@@ -9,8 +9,8 @@
   "dependencies": {
     "@chiragpurohit71085/demo-react-plugin": "file:../demo-react-plugin",
     "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-native-web": "^0.20.0",
     "zustand": "latest"
   },

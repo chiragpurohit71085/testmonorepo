@@ -1,12 +1,18 @@
 import { Stack } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useEffect } from "react";
 import { StyleSheet, View } from 'react-native';
 import { SampleComponent } from "@chiragpurohit71085/demo-react-plugin";
-
 import { ThemedText } from '@/components/ThemedText';
-
+import { useAppStore } from "../../store/store";
 export default function WidgetDemo() {
-  const [text, setText] = useState('Initial Text');
+  
+  const { text, setText, callback, setCallback } = useAppStore();
+
+    useEffect(() => {
+      setCallback(() => () => {
+        alert("Callback triggered from SampleComponent!");
+      });
+    }, [setCallback]);
 
   return (
     <>
@@ -17,7 +23,7 @@ export default function WidgetDemo() {
         <SampleComponent
           text={text}
           onTextChange={setText}
-          onCallback={() => alert('Callback triggered from SampleComponent!')}
+          onCallback={callback}          
         />
       </View>
     </>
